@@ -5,51 +5,250 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'css/index.css' %}">
-    <link rel="stylesheet" href="{% static 'app1\css\bootstrap.min.css' %}">
+    <title>Home page</title>
+    
+    <link rel="stylesheet" href="{% static 'app1/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'app1/css/index.css' %}">
 </head>
 <body>
-    <div class="vh-100">
+    <!-- <div class="vh-100"> -->
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">Home</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">About</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled" href="#">portfolio</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#"></a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link">Disabled</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link disabled">Disabled</a>
-                  </li>
-                </ul>
-              </div>
+          <div class="container-fluid ">
+            <a class="navbar-brand" href="#">DJ</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#Contacts">Contacts</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#portfolio">portfolio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#blog" >Blog</a>
+                </li>
+              </ul>
             </div>
-        </nav>
-        <div class="vh-100 imagediv">
-            <img src="{% static 'app1/media/WIN_20221029_11_15_52_Pro.jpg' %}" class="card-img-top" alt="profile picture">
-        </div>
-        <h1 class="he">helo</h1>
+          </div>
+      </nav>
+    <!-- <div> -->
+      <section id="home" class="container-fluid">
+          <h1 class="introduction">Hi, I am Devanand Joly.</h1>
+          <a href="{% static 'app1\media\resume.pdf' %}" download><button>resume <span class="down-arrow"></span></button></a>
+          <img src="{% static 'app1\media\devanand.jpg' %}" alt="image preview" class="imagedev" style="">
     </div>
+    <div>
+      </section>
+      <section id="about">
+        <div class="container-fluid">
+          <div class="card intro" >
+            <!-- <img src="{% static 'app1\media\aboutimage.jpg' %}" class="card-img-top dp" alt="profile picture"> -->
+            <div class="card-body">
+              <h5 class="card-title">DEVANAND J</h5>
+              <p class="card-text">Hello I am Devanand Joly.<br>Based on Kollam, Kerala.<br>Pursuing B.Tech Computer Science at College of engineering and management punnapra, Alappuzha.<br></p>
+            </div>
+          </div><br>
+          
+            <div class="card skillcard">
+              <div class="card-body">
+                <h5 class="card-title">Skills and Expertise</h5>
+                {% for obj in skill %}
+                <p class="card-text"><ul><li>{{obj}}</li></ul></p>
+                {% endfor %}
+              </div>
+            </div><br>
+            <div class="card educard" >
+              <div class="card-body">
+                <h5 class="card-title">Educational Qualification</h5>
+                {% for obj in educ %}
+                <p class="card-text"><ul>
+                    <li>{{obj}}</li>
+                  </ul>
+                </p>
+                {% endfor %}
+              </div>
+            </div><br>
+            <!-- <div class="card awardcard">
+              <div class="card-body">
+                <h5 class="card-title">Awards and Honors</h5>
+                <p class="card-text">{% comment "" %}space for award details{% endcomment %}</p>
+              </div>
+            </div> -->
+          <!-- </div> -->
+        </div>
+      </section>
+    </div>
+    <div>
+      <section id="Contacts">
+        <div class="container-fluid">
+          <!-- linkdin -->
+          <div class="card" style="width: 100%;">
+            <div class="card-body">
+              <a href="https://www.linkedin.com/in/devanandj"><img src="{% static 'app1\media\linkdin.png' %}" alt="Linkdin" style="width: 120px;height: 100px;;"></a><br>
+            </div>
+          </div><br>
+
+          <!-- twitter -->
+          <div class="card" style="width: 100%;">
+            <div class="card-body">
+              <a href="https://twitter.com/_dejo14?t=Tko5d2w757YfBNVkgMRzsA&s=08"><img src="{% static 'app1\media\twitter.png' %}" alt="twitter" style="width: 100px;height: 105px;"></a>
+
+            </div>
+          </div><br>
+          
+
+          <!-- instagram -->
+          <div class="card" style="width: 100%;">
+            <div class="card-body">
+              <a href="https://instagram.com/_de_jo?igshid=ZDdkNTZiNTM="><img src="{% static 'app1\media\instagram.png' %}" alt="instagram" style="width: 117px;height: 105px;"></a><br>
+            </div>
+          </div><br>
+          
+
+          <!-- facebook -->
+          <div class="card" style="width: 100%;">
+            <div class="card-body">
+              <a href="https://www.facebook.com/nandhu.devanand?mibextid=ZbWKwL"><img src="{% static 'app1\media\fbimage.png' %}" alt="facebook image" style="width: 90px;height: 100px;"></a><br>
+            </div>
+          </div><br>
+          
+
+          <!-- whatsapp -->
+          <div class="card" style="width: 100%;">
+            <div class="card-body">
+              <a href="https://wa.me/+918921856638"><img src="{% static 'app1\media\whatsapp.png' %}" alt="whatsapp" style="width: 90px;height: 100px;"></a><br>
+            </div>
+          </div><br>
+          
+
+          <!-- Gmail
+          <div class="card" style="width: 100%;">
+            <div class="card-body">
+              <a href="mailto:nandhudevanand4419@gmail.com">Send an email</a>
+
+            </div>
+          </div><br> -->
+          
+        </div>
+      </section>
+    </div>
+    <!-- </div> -->
 </body>
 </html>
-
-
 <style>
+  .navbar{
+    position: fixed;
+    width: 100%;
+  }
+  button {
+  position: absolute;
+  background-color: 444853; /* set the background color */
+  left: 73%;
+  top: 50%;
+  border: none; /* remove the border */
+  border-radius: 30px;
+  color: white; /* set the text color */
+  padding: 15px 32px; /* set the padding */
+  text-align: center; /* center the text */
+  text-decoration: none; /* remove underline */
+  display: inline-block; /* display as inline block */
+  font-size: 16px; /* set the font size */
+  margin: 4px 2px; /* add some margin */
+  cursor: pointer; /* set the cursor to pointer */
+}
+.down-arrow {
+  position: absolute;
+  left: 75%;
+  width: 0; 
+  height: 0; 
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid white;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.down-arrow:hover{
+  background-color: 444853;
+  color: white;
+}
+button:hover{
+  background-color: white;
+  color: 444853;
+  border: 50px;
+  border-color: green ;
+}
+
+  html,body{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+  }
+  section{
+    /* position: relative; */
+    width: 100%;
+    height: 100%;
+  }
+  #home{
+    background-color: white;
+    /* position: relative; */
+    width: 100%;
+
+  }
+  .imagedev{
+    /* position: absolute; */
+    left: 50%;
+    max-width: 50%;
+    height: 100%;
+  }
+  .introduction{
+    position: absolute;
+    color: 444853;
+    font-size: 50px;
+    left: 60%;
+    top: 40%;
+    /* animation: typing 3s steps(22), blink-caret .75s step-end infinite; */
+  }
+  /* @keyframes typing{
+    from {width: 0%;}
+    to {width: 40%;}
+  }
+  @keyframes blink-caret{
+    from {border-color: transparent;}
+    to {border-color: black;}
+  } */
+  @media screen and (max-width:800px){
+    .imagedev{
+      max-width: 100%;
+    }
+    .introduction{
+      position: absolute;
+      font-size: 60px;
+      color: white;
+      left: 10%;
+      top: 70%;
+    }
+    button{
+      position: absolute;
+      top: 90%;
+      left: 10%;
+    }
+  }
   
-</style>
+
+</style> 
+
+
 
 
 

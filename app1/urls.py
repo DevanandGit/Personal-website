@@ -3,8 +3,9 @@ from .views import index
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
-    path('index/', index)
+    path('Home/', index),
+    # path('about/', about),
 ]
-urlpatterns += staticfiles_urlpatterns()
+# urlpatterns += staticfiles_urlpatterns()
 
 
